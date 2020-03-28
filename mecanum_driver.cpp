@@ -1,5 +1,8 @@
+#include "Arduino.h"
 #include <mecanum_driver.h>
 
+#ifndef MECANUM_DRIVER_H
+#define MECANUM_DRIVER_H
 namespace engine {
 /*************************************************************/
 // motor functions
@@ -9,9 +12,9 @@ motor::motor(int pinA = 0, int pinB = 0, int pwmPin = 0) {
 	pinB_ = pinB;
 	pwmPin_ = pwmPin;
 
-	pinMode(pinA, output);
-	pinMode(pinB, output);
-	pinMode(pwmPin, output);
+	pinMode(pinA, OUTPUT);
+	pinMode(pinB, OUTPUT);
+	pinMode(pwmPin, OUTPUT);
 }
 
 void motor::move_clockwise(uint8_t pwm) {
@@ -66,3 +69,5 @@ void robot_4_wheels::move_down(uint8_t pwm) {
 }
 
 }  // namespace engine
+
+#endif //MECANUM_DRIVER_H

@@ -49,9 +49,9 @@ void move_down(uint8_t pwm);
 
 private:
 // four motors
-motor fRight = motor();
-motor fLeft = motor();
-motor bRight = motor();
-motor bLeft = motor();
+motor fRight;
+motor fLeft;
+motor bRight;
+motor bLeft;
 };  // class 4_motor_bot
 }  // namespace engine
