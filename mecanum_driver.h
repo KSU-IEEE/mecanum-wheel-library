@@ -1,6 +1,6 @@
 #include <stdint.h>
 
-namespace engine {
+namespace robot {
 class motor {
 public:
 motor(int pinA, int pinB, int pwmPin);
@@ -54,4 +54,4 @@ motor fLeft;
 motor bRight;
 motor bLeft;
 };  // class 4_motor_bot
-}  // namespace engine
+}  // namespace robot

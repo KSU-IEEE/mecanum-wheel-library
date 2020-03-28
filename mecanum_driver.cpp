@@ -3,7 +3,7 @@
 
 #ifndef MECANUM_DRIVER_H
 #define MECANUM_DRIVER_H
-namespace engine {
+namespace robot {
 /*************************************************************/
 // motor functions
 /*************************************************************/
@@ -31,7 +31,7 @@ void motor::move_cclockwise(uint8_t pwm) {
 
 void motor::halt() {
 	digitalWrite(pinA_, LOW);
-	digitralwrite(pinB_, LOW);
+	digitalWrite(pinB_, LOW);
 	analogWrite(pwmPin_, 0);
 }
 /*************************************************************/
@@ -39,8 +39,8 @@ void motor::halt() {
 /*************************************************************/
 robot_4_wheels::robot_4_wheels(int pinList[12]) {
  	fRight = motor(pinList[0], pinList[1], pinList[2]);
-	fLeft = motor(pinList[3], pinList[4], pinlist[5]);
-	bRight = motor(pinlist[6], pinList[7], pinlist[8]);
+	fLeft = motor(pinList[3], pinList[4], pinList[5]);
+	bRight = motor(pinList[6], pinList[7], pinList[8]);
 	bLeft = motor(pinList[9], pinList[10], pinList[11]);
 }
 void robot_4_wheels::move_right(uint8_t pwm) {
@@ -65,9 +65,9 @@ void robot_4_wheels::move_down(uint8_t pwm) {
 	fRight.move_cclockwise(pwm);
 	bRight.move_clockwise(pwm);
 	fLeft.move_clockwise(pwm);
-	bLeft.mvoe_cclockwise(pwm);
+	bLeft.move_cclockwise(pwm);
 }
 
-}  // namespace engine
+}  // namespace robot
 
 #endif //MECANUM_DRIVER_H
