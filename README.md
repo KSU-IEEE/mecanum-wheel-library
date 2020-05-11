@@ -1,24 +1,21 @@
 # mecanum-wheel-library
+--------------------------------------------------------
 Library for using the mecanum wheels with the motor drivers
 
 This the library that KSU's IEEE chapter uses for driving Mecanum wheels
 
 # Installation
---------------------------------------------------------------------------------
-
 Clone this repo directly into Arduino/lib/targets/libraries  
 On some newer versions of Arduino you should clone it into Arduino/libraries
 
-When installed, this library should look like:
+When installed, this library should look like (replace Arduino/lib/targets/libraries/ with Arduino/libraries if that's what your version needs):
 
-Arduino/lib/targets/libraries/mecanum-wheel-library              		 (this library's folder)
-Arduino/lib/targets/libraries/mecanum-wheel-library/mecanum_driver.cpp   (the library implementation files)
-Arduino/lib/targets/libraries/mecanum-wheel-library/mecanum_driver.h 	 (the library description files)
-Arduino/lib/targets/libraries/mecanum-wheel-library/readme.txt   		 (this file)
+Arduino/lib/targets/libraries/mecanum-wheel-library              		 (this library's folder)  
+Arduino/lib/targets/libraries/mecanum-wheel-library/mecanum_driver.cpp   (the library implementation files)  
+Arduino/lib/targets/libraries/mecanum-wheel-library/mecanum_driver.h 	 (the library description files)  
+Arduino/lib/targets/libraries/mecanum-wheel-library/readme.txt   		 (this file)  
 
 # Building
---------------------------------------------------------------------------------
-
 After this library is installed, you just have to start the Arduino application.
 You may see a few warning messages as it's built.
 
@@ -33,7 +30,6 @@ in "Arduino/lib/targets/libraries/mecanum_drive". This file is the built/compile
 code.
 
 # Using these classes  
---------------------------------------------------------------------------------
 ## The motor class  
 instantiate by calling:  
 `robot::motor myMotor = robot::motor(pinA, pinB, pwmPin);`  
@@ -71,6 +67,6 @@ The important functions for this robot are:
 myAwesomeBot.move_right(pwm);
 myAwesomeBot.move_left(pwm);
 myAwesomeBot.move_up(pwm);
-myAwesomeBot.move_down(pwm)();
+myAwesomeBot.move_down(pwm);
 ```  
-The directions in this are in reguards to the robot movements in the xy plane, you can really choose the orientation on this as long as you configure the wires on the motor correctly
+The directions in this are in reguards to the robot movements in the xy plane, you can really choose the orientation on this as long as you configure the wires on the motor correctly. These directions are in reguards to the front of the robot (determined by designer).
